@@ -1,0 +1,157 @@
+body {
+    background-image: url('https://im.haberturk.com/2020/05/22/ver1590131048/2687889_810x458.jpg');
+}
+.table-dark {
+    border: #D3BBDD;
+    border-style: solid;
+    color: rgb(247, 5, 86);
+    background-color:#343a40db ;
+}
+
+.table .thead-light th {
+    border: #D3BBDD;
+    border-style: solid;
+    color: rgb(247, 5, 86);
+    background-color:#343a40b8 ;
+}
+.pembe {
+    border: #D3BBDD;
+    border-style: solid;
+    color: rgb(247, 5, 86);
+    background-color:#343a40b8 ;
+}
+
+h1 {
+    padding: 0.3em;
+    font-family: "Brush Script MT", Helvetica, sans-serif;
+    font-size: 61px;
+    color: palevioletred;
+}
+
+#header a {
+    color: rgb(98, 237, 105);
+}
+
+#header {
+    background-color:#daf8fa;
+}
+
+.container {
+    
+    padding: 0.8em;
+    color: white;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.promotions {
+    margin-bottom: 20px;
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+    color: #e92a69;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff; /* Change the color on hover */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #e92a69;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #e92a69;
+}
+
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+}
+
+
+
+.table-container {
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+}
+
+
+.button {
+    background-color: #3366cc;
+    color: #ffffff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+.product {
+    text-align: center;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  
+  .product-title {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  .product-price {
+    font-weight: bold;
+  }
+  
+  .add-to-basket-button {
+    margin-top: 10px;
+    background-color:#343a40;
+    color: palevioletred;
+    border: round;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    font-size: 14px;
+    transition-duration: 0.4s;
+
+    
+  }
+  .add-to-basket-button:hover{
+    color: white;
+    background-color: rgb(240, 184, 203);
+    
+  }
+  
+
+.link {
+    font-size: x-small;
+    color: black;
+}
+
+.footer {
+    background-color: white;
+}
+
+.navbar-nav .dropdown-menu{
+
+    background-color: rgb(255, 154, 188);
+
+  }
+
+.navbar-nav .dropdown-menu a{
+
+    color: #343a40;
+
+  }
+
+.navbar-nav .dropdown-menu a:hover{
+    color: #fff;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BuyStore Item Details</title>
+
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
+
+    <script>
+        function updateDateTime() {
+            var dateTimeElement = document.getElementById("datetime");
+            var now = new Date();
+            var dateTimeString = now.toLocaleString();
+            dateTimeElement.innerHTML = dateTimeString;
+        }
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+
+        function calculateTimeRemaining() {
+            var happyHourEnd = new Date(); // Replace this with the actual end time of your happy hour
+            happyHourEnd.setHours(100, 0, 0); // Set the happy hour end time (hours, minutes, seconds)
+
+            var now = new Date();
+            var timeDiff = happyHourEnd - now;
+
+            var hoursRemaining = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutesRemaining = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var secondsRemaining = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            return {
+                hours: hoursRemaining,
+                minutes: minutesRemaining,
+                seconds: secondsRemaining
+            };
+        }
+
+        function updateCountdown() {
+            var countdownElement = document.getElementById("countdown");
+            var remainingTime = calculateTimeRemaining();
+            var countdownString = remainingTime.hours + "h " + remainingTime.minutes + "m " + remainingTime.seconds + "s";
+            countdownElement.innerHTML = countdownString;
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</head>
+
+<body  onload="generateTable()">
+    <!-- Header -->
+    <div id="header" class="p-5 text-center bg-image" style="
+      background-image: url('https://im.haberturk.com/2020/05/22/ver1590131048/2687889_810x458.jpg');
+      height: 250px;
+    ">
+        <h1 align="middle">BuyStore</h1>
+
+
+        <p align="right">LOGIN |
+            <a href="registration.html">REGISTRATION</a>
+            <span id="datetime"></span>
+        </p>
+        <p><b>Time remaining until the end of Happy Hour: <span id="countdown"></span></b></p>
+
+    </div>
+    <!-- Header -->
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+
+        <hr />
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="items.html" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div><a class="all" href="details.html">All</a></div>
+                        <div><a class="tops" href="tops.html">Tops</a></div>
+                        <div><a class="pants" href="pants.html">Pants</a></div>
+                        <div><a class="dresses" href="dresses.html">Dresses</a></div>
+                        <div><a class="jackets" href="jackets.html">Jackets</a></div>
+                        <div><a class="shoes" href="shoes.html">Shoes</a></div>
+                        <div><a class="accessories" href="accessories.html">Accessories</a></div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="details.html">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="basket.html">Basket</a>
+                </li>
+            </ul>
+        </nav>
+        <hr />
+    </div>
+</nav>
+<br>
+<!-- Navbar -->
+
+<!-- Pants -->
+
+
+<div class="container">
+    <h2 style="color: rgb(166, 3, 57);background-color: pink; width: 7.3%; border-radius: 10px;">Pants</h2>
+
+    <h4>
+        <i style="color: rgb(166, 3, 57)">Unleash Your Style with Trendsetting Pants for Modern Women</i>
+     </h4>
+
+    <div class="row" style="color: rgb(166, 3, 57)">
+         <div class="col-md-4">
+            <hr><div class="product">
+                <img style="border-radius: 10px;" src="Images/lightbluejean.jpeg" alt="Light Blue Jean" class="product-image">
+                <h3 class="product-title">Light Blue Jean</h3>
+                <p class="product-category">Category: <span class="category-name">Pants</span></p>
+                <p class="product-price">39,99€</p>
+                <button class="add-to-basket-button" onclick="add('pants', 39.99, 1, 5)">Add to basket</button><hr>
+              </div>
+          </div>
+
+
+    </div>
+</div>
+
+<!-- Pants -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script> 
+
+<!-- Footer -->
+
+<div class="container my-5" style="background-color: palevioletred;" >
+
+    <footer class="bg-primary text-center text-lg-start text-white" >
+      <!-- Grid container -->
+      <div class="container p-4" style="background-color: palevioletred" >
+        <!--Grid row-->
+        <div class="row my-4">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+  
+            <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+              <img src="data:image/png;base64,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" height="70" alt=""
+                   loading="lazy" />
+            </div>
+            <h2 align style="font-size: small; color: rgb(134, 7, 100);">AAAAAAAAA!</h2>
+            <p class="text-center"> <i> Be bold, be chic, be you "<b style="color:rgb(134, 7, 100);">BUYSTORE</b>"</i> </p>
+  
+          </div>
+
+          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Contact</h5>
+  
+            <ul class="list-unstyled">
+              <li>
+                <p><i class="fas fa-map-marker-alt pe-2"></i>You can visit us at <br> Cihangir Avenue 61 Street, Istanbul/Turkey</p>
+              </li>
+              <li>
+                <p><i class="fas fa-phone pe-2"></i>
+                    Phone Number: <b style="color: rgb(71, 241, 88);"> 0561-1967-6161</b></p>
+              </li>
+              <li>
+                <div class="navbar-nav">
+                    <i>Contact: <a style="color: rgb(134, 7, 100);  " href="mailto:buystore@support.com">buystore@support.com</a></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+
+    </footer>
+
+   <!-- Footer -->

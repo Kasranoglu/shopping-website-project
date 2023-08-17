@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BuyStore Item Details</title>
+
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
+
+    <script>
+        function updateDateTime() {
+            var dateTimeElement = document.getElementById("datetime");
+            var now = new Date();
+            var dateTimeString = now.toLocaleString();
+            dateTimeElement.innerHTML = dateTimeString;
+        }
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+
+        function calculateTimeRemaining() {
+            var happyHourEnd = new Date(); // Replace this with the actual end time of your happy hour
+            happyHourEnd.setHours(100, 0, 0); // Set the happy hour end time (hours, minutes, seconds)
+
+            var now = new Date();
+            var timeDiff = happyHourEnd - now;
+
+            var hoursRemaining = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutesRemaining = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var secondsRemaining = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            return {
+                hours: hoursRemaining,
+                minutes: minutesRemaining,
+                seconds: secondsRemaining
+            };
+        }
+
+        function updateCountdown() {
+            var countdownElement = document.getElementById("countdown");
+            var remainingTime = calculateTimeRemaining();
+            var countdownString = remainingTime.hours + "h " + remainingTime.minutes + "m " + remainingTime.seconds + "s";
+            countdownElement.innerHTML = countdownString;
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</head>
+
+<body onload="loadItems()">
+    <!-- Header -->
+    <div id="header" class="p-5 text-center bg-image" style="
+      background-image: url('https://im.haberturk.com/2020/05/22/ver1590131048/2687889_810x458.jpg');
+      height: 250px;
+    ">
+        <h1 align="middle">BuyStore</h1>
+
+
+        <p align="right">LOGIN |
+            <a href="registration.html">REGISTRATION</a>
+            <span id="datetime"></span>
+        </p>
+        <p><b>Time remaining until the end of Happy Hour: <span id="countdown"></span></b></p>
+
+    </div>
+    <!-- Header -->
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+
+        <hr />
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="items.html" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div><a class="all" href="details.html">All</a></div>
+                        <div><a class="tops" href="tops.html">Tops</a></div>
+                        <div><a class="pants" href="pants.html">Pants</a></div>
+                        <div><a class="dresses" href="dresses.html">Dresses</a></div>
+                        <div><a class="jackets" href="jackets.html">Jackets</a></div>
+                        <div><a class="shoes" href="shoes.html">Shoes</a></div>
+                        <div><a class="accessories" href="accessories.html">Accessories</a></div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="details.html">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="basket.html">Basket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="stock.html">Stocks</a>
+                </li>
+            </ul>
+        </nav>
+        <hr />
+    </div>
+</nav>
+<br>
+<!-- Navbar -->
+
+<div class="container">
+
+  <h2 style="color: rgb(166, 3, 57);background-color: pink; width: 19.5%; border-radius: 10px;">Available Items</h2>
+  <table id="itemsTable" class="table-striped table-dark table-hover" style="border: 5px; border-style: solid;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Size</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+  <script src="js.js"></script>
+</body>
+</html>

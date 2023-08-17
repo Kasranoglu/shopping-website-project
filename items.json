@@ -1,0 +1,40 @@
+{
+    "items": [
+      {
+        "name": "Pink Top",
+        "category": "Top",
+        "price": 14.99,
+        "color": "Pink",
+        "size": "L"
+      },
+      {
+        "name": "Green Flower Dress",
+        "category": "Dress",
+        "price": 29.99,
+        "color": "Green",
+        "size": "M"
+      },
+      {
+        "name": "Blue Blazer",
+        "category": "Jackets",
+        "price": 69.99,
+        "color": "Blue",
+        "size": "28/28"
+      },
+      {
+        "name": "Party Heels",
+        "category": "Shoes",
+        "price": 49.99,
+        "color": "White",
+        "size": "36"
+      },
+      {
+        "name": "Blue Sunglasses",
+        "category": "Accessorioes",
+        "price": 9.99,
+        "color": "Blue",
+        "size": "M"
+      }
+    ]
+  }
+  
